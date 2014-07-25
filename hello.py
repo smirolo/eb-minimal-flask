@@ -12,9 +12,9 @@ def hello():
     k = Key(mybucket)
     k.key = 'credentials'
     secret_key = k.get_contents_as_string()
-    return "Hello World!\nThe decription key is: '%s'\nThe secret is '%s'" \
+    result = "Hello World!\nThe decription key is: '%s'\nThe secret is '%s'" \
         % (decrypt_key, secret_key)
-
+    return result
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int("80"))
+    app.run(host="0.0.0.0", port=int("80"), debug=True)
